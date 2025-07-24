@@ -7,12 +7,120 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+.loader--hidden {
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 40px auto;
+}
+
+input[type="text"] {
+  
+  border: 1px solid #808080;
+    border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:hover {
+  border: 1px solid #000;
+}
+input[type="text"]:active {
+border: 1px solid #4e75ff;
+}
+
+button {
+  border-radius: 8px;
+    padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 500;
+background: #4e75ff;
+  color: white;
+  border: none;
+  
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #6c8cff;
+}
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 0;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.photo-card {
+  flex: wrap;
+  flex: 0 1 calc((100% - 48px) / 3);
+  box-sizing: border-box;
+   border: 1px solid #808080;;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+   height: 250px;
+      object-fit: cover;
+
+    }
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.info p {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+
+.info p b {
+  margin-top: 4px;
+  font-weight: 500;
+  color: #333;
+}
