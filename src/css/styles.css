@@ -124,3 +124,7 @@ button:hover {
   font-weight: 500;
   color: #333;
 }
+
+.is-hidden {
+  display: none !important;
+}

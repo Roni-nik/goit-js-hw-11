@@ -14,6 +14,13 @@ const searchButton= document.querySelector("button")
 
 const API_KEY = "51467022-cc438a4dec995b2b9f6e09d1a";
 
+document.addEventListener('DOMContentLoaded', () => {
+  const loader = document.querySelector('#loader');
+  if (loader) {
+    loader.classList.add('is-hidden');
+  }
+});
+
 formSerch.addEventListener("submit", handleSubmit)
 
 async function handleSubmit(event) {
@@ -54,6 +61,7 @@ async function handleSubmit(event) {
     });
   }
 }
+
 
 // const searchButton= 
 
