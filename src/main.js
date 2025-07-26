@@ -15,11 +15,12 @@ const searchButton= document.querySelector("button")
 const API_KEY = "51467022-cc438a4dec995b2b9f6e09d1a";
 
 document.addEventListener('DOMContentLoaded', () => {
-  const loader = document.querySelector('#loader');
+  const loader = document.querySelector('.loader');
   if (loader) {
     loader.classList.add('is-hidden');
   }
 });
+
 
 formSerch.addEventListener("submit", handleSubmit)
 
@@ -40,7 +41,7 @@ async function handleSubmit(event) {
       clearGallery();
           showLoader();
     const data = await getImagesByQuery(inputVal);
-    hideLoader();
+    
     if (data.hits.length === 0) {
       iziToast.warning({
         title: 'Warning',
@@ -50,6 +51,8 @@ async function handleSubmit(event) {
       return;
     }
 
+      
+      
     createGallery(data.hits);
 
   } catch (error) {
@@ -59,15 +62,10 @@ async function handleSubmit(event) {
       message: 'Something went wrong. Please try again later.',
       position: 'topRight',
     });
-  }
+    }
+    
+  finally {
+       hideLoader();
+    }
 }
-
-
-// const searchButton= 
-
-// У файлі main.js напиши всю логіку роботи додатка.
-//  Виклики нотифікацій iziToast, усі перевірки на довжину 
-//  масиву в отриманій відповіді робимо саме в цьому файлі.
-//  Імпортуй в нього функції із файлів pixabay - api.js та render - functions.js 
-//  та викликай їх у відповідний момент.
 
